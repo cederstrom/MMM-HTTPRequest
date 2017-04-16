@@ -3,7 +3,7 @@ This an extension for the [MagicMirror²](https://github.com/MichMich/MagicMirro
 
 It can send GET HTTP requests when a notification is received. It does not take up any space on the mirror and can be configured to show an alert message when the request is done (HTTP 200 OK).
 
-I use it with the [Buttons module](https://github.com/Jopyth/MMM-Buttons). See my example in the [Usage section](README.md#Usage).
+I use it with the [Buttons module](https://github.com/Jopyth/MMM-Buttons). See my example in the [Usage section](README.md#usage).
 
 This plugin was inspired and initially cloned from [MMM-HTTPRequestDisplay](https://github.com/Eunanibus/MMM-HTTPRequestDisplay).
 
@@ -27,7 +27,7 @@ The following properties can be configured:
 | Option             | Description
 | ------------------ | -----------
 | `showAlertOnError` | Should an alert be displayed if the request did not result in a HTTP 200 OK.<br><br> **Possible values:** `true` or `false` <br><b>Default value:</b> `true` |
-| `requests`         | An object holding each requests configuration in a named object. See [Requests Configuration](README.md#Requests-Configuration) below. Default is `{}`. |
+| `requests`         | An object holding each requests configuration in a named object. See [Requests Configuration](README.md#requests-configuration) below. Default is `{}`. |
 
 ### Requests Configuration
 
@@ -75,7 +75,7 @@ modules: [
 ````
 
 ## Usage
-To trigger an URL you need to send a notification with the notification string `HTTP_REQUEST`. The payload is just an object with a `key` matching a key in the list of `requests` in this modules configuration. E.g. `OPEN_GARAGE_DOOR` form the [Configuration options](README.md#Configuration-options).
+To trigger an URL you need to send a notification with the notification string `HTTP_REQUEST`. The payload is just an object with a `key` matching a key in the list of `requests` in this modules configuration. E.g. `OPEN_GARAGE_DOOR` form the [Configuration options](README.md#configuration-options).
 
 Example of usage in code:
 ````javascript
