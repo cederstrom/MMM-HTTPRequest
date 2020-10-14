@@ -39,7 +39,7 @@ module.exports = NodeHelper.create({
             url: requestConfig.url,
             method: requestConfig.method || "GET"
         }, function(error, response, body) {
-            if (!error && response.statusCode == 200) {
+            if (!error && [200, 201, 202].indexOf(response.statusCode) >= 0) {
                 self.sendSocketNotification("HTTP_REQUEST_CALLBACK", {
                     notification: requestConfig.onSuccess.notification,
                     payload: requestConfig.onSuccess.payload
