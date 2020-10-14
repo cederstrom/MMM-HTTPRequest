@@ -75,11 +75,11 @@ modules: [
 ````
 
 ## Usage
-To trigger an URL you need to send a notification with the notification string `HTTP_REQUEST`. The payload is just an object with a `key` matching a key in the list of `requests` in this modules configuration. E.g. `OPEN_GARAGE_DOOR` form the [Configuration options](README.md#configuration-options).
+To trigger an URL you need to send a notification with the notification string `HTTP_REQUEST`. The payload is just an object with a `request` matching a key in the list of `requests` in this modules configuration. E.g. `OPEN_GARAGE_DOOR` form the [Configuration options](README.md#configuration-options).
 
 Example of usage in code:
 ````javascript
-this.sendNotification("HTTP_REQUEST", {key: OPEN_GARAGE_DOOR});
+this.sendNotification("HTTP_REQUEST", { request: OPEN_GARAGE_DOOR });
 ````
 
 Example of usage with the [Buttons module](https://github.com/Jopyth/MMM-Buttons):
