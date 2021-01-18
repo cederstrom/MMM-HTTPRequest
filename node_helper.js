@@ -38,7 +38,7 @@ module.exports = NodeHelper.create({
         request({
             url: requestConfig.url,
             method: requestConfig.method || "GET",
-            ...requestConfig.auth && { auth: requestConfig.auth }
+            auth: requestConfig.auth || null
         }, function(error, response, body) {
             if (!error && [200, 201, 202].indexOf(response.statusCode) >= 0) {
                 self.sendSocketNotification("HTTP_REQUEST_CALLBACK", {
