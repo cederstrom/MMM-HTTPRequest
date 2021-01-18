@@ -33,10 +33,12 @@ The following properties can be configured:
 
 Each request configuration is an object with the following properties:
 
-| Property    | Description   |
-| ----------- | ------------- |
-| `url`       | URL to call. |
-| `onSuccess` | An object which describes a notification to send when the request finishes with HTTP 200 OK.<br><br>This property is not mandatory. If not present or set to `undefined` nothing will happen when the request is done.<br><br>For more information, see the section about `sendNotificatio` in the [MagicMirror² Module Development Documentation](https://github.com/MichMich/MagicMirror/tree/master/modules). |
+| Property    | Mandatory | Default | Description |
+| ----------- | --------- | ------- | ----------- |
+| `url`       | `true`    |         | URL to call. |
+| `method`    | `false`   | `GET`   | HTTP method to use. Eg. `GET`, `POST` etc. |
+| `auth`      | `false`   | `null`  | Authentication options. See https://github.com/request/request#http-authentication for more details. |
+| `onSuccess` | `false`   |         | An object which describes a notification to send when the request finishes with HTTP 200 OK.<br><br>This property is not mandatory. If not present or set to `undefined` nothing will happen when the request is done.<br><br>For more information, see the section about `sendNotificatio` in the [MagicMirror² Module Development Documentation](https://github.com/MichMich/MagicMirror/tree/master/modules). |
 
 ## Configuration example
 
@@ -48,6 +50,10 @@ modules: [
             requests: {
                 OPEN_GARAGE_DOOR: {
                     url: "https://home-automation-server/garage-door/open",
+                    method: "POST",
+                    auth: { 
+                        "bearer": "123-my-super-secret-bearer-token"
+                    }
                     onSuccess: {
                         notification: "SHOW_ALERT",
                         payload: {
